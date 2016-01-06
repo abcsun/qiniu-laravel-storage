@@ -136,6 +136,15 @@ class QiniuAdapter extends AbstractAdapter {
     }
 
     /**
+     * 通过文件路径保存文件
+     * 基于七牛putFile增加的使用的putFile plugin
+     * @return [type] [description]
+     */
+    public function putFile($key, $filePath){
+        return $this->getUploadManager()->putFile($this->uploadToken(), $key, $filePath);
+    }
+    
+    /**
      * Rename a file.
      *
      * @param string $path

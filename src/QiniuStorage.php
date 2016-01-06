@@ -52,6 +52,18 @@ class QiniuStorage {
     }
 
     /**
+     * 上传文件，通过文件路径
+     * @param  [type] $key  [description]
+     * @param  [type] $path [description]
+     * @return [type]       [description]
+     */
+    public function putFile($key, $path)
+    {
+        return $this->storage->putFile($key, $path);
+        // return $this->storage->getDriver()->putFile($key, $path); 已注册过putFile操作
+    }
+
+    /**
      * 附加内容到文件开头
      * @param $key
      * @param $contents
