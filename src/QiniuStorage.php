@@ -48,7 +48,7 @@ class QiniuStorage {
      */
     public function put($key, $contents)
     {
-        return $this->storage->put($key, $contents);
+        return $this->storage->getDriver()->putContent($key, $contents);
     }
 
     /**

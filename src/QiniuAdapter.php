@@ -143,6 +143,15 @@ class QiniuAdapter extends AbstractAdapter {
     public function putFile($key, $filePath){
         return $this->getUploadManager()->putFile($this->uploadToken(), $key, $filePath);
     }
+
+    /**
+     * 保存文件内容
+     * 基于七牛put增加的plugin
+     * @return [type] [description]
+     */
+    public function putContent($key, $content){
+        return $this->getUploadManager()->put($this->uploadToken(), $key, $content);
+    }
     
     /**
      * Rename a file.

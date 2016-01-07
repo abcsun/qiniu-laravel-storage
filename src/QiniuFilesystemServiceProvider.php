@@ -11,6 +11,7 @@ use zgldh\QiniuStorage\Plugins\PersistentStatus;
 use zgldh\QiniuStorage\Plugins\PrivateDownloadUrl;
 use zgldh\QiniuStorage\Plugins\UploadToken;
 use zgldh\QiniuStorage\Plugins\PutFile;
+use zgldh\QiniuStorage\Plugins\Put;
 
 class QiniuFilesystemServiceProvider extends ServiceProvider {
 
@@ -38,6 +39,7 @@ class QiniuFilesystemServiceProvider extends ServiceProvider {
                 $file_system->addPlugin(new PersistentStatus());
                 $file_system->addPlugin(new UploadToken());
                 $file_system->addPlugin(new PutFile());
+                $file_system->addPlugin(new Put());
 
                 return $file_system;
             }
