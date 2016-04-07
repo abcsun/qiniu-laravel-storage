@@ -17,6 +17,7 @@ class QiniuFilesystemServiceProvider extends ServiceProvider {
 
     public function boot()
     {
+        class_alias('Illuminate\Support\Facades\Storage', 'Storage'); //for Lumen5.2
         \Storage::extend(
             'qiniu',
             function ($app, $config)
